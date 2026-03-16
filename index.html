@@ -104,8 +104,8 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
         Salut Bruno,<br>voici les updates.
       </h1>
       <div class="text-lg sm:text-xl text-gray-500 font-space leading-relaxed mb-8 space-y-4">
-        <p>Depuis la dernière présentation, j'ai bossé sur <strong class="text-neo-black">pas mal de trucs</strong>. Des corrections, une refonte de l'interface, de nouvelles features, et des améliorations techniques.</p>
-        <p>Ici je te montre tout ce qui a changé, ce qui a été corrigé, et où on en est pour le MVP.</p>
+        <p>Depuis la dernière présentation, j'ai avancé sur <strong class="text-neo-black">pas mal de sujets</strong>. Corrections de bugs, refonte complète de l'interface, nouvelles fonctionnalités, et du renfort côté technique.</p>
+        <p>Je te montre tout ici : ce qui a changé, ce qui a été corrigé, et où on en est pour le MVP.</p>
         <a href="https://hibroker-advice.vercel.app/" target="_blank" class="neo-btn bg-neo-black text-white px-6 py-3 font-mono text-sm inline-flex items-center gap-2">
           hibroker-advice.vercel.app &#8599;
         </a>
@@ -128,7 +128,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number text-gray-400 mb-4">02 / OÙ ON EN ÉTAIT</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">La v1 était en place.</h2>
       <p class="text-lg text-gray-400 font-space leading-relaxed mb-8">
-        L'onboarding, le dashboard, les campagnes, l'analyse IA, le scraping Google, les relances, la veille concurrentielle, la sécurité. Tout ça tournait. Mais il y avait des bugs à corriger, l'interface avait besoin d'un coup de polish, des éléments pas cliquables, et des nouvelles features à ajouter.
+        L'onboarding, le dashboard, les campagnes, l'analyse IA, le scraping Google, les relances, la veille concurrentielle, la sécurité &mdash; tout ça tournait. Mais il restait des bugs, l'interface avait besoin d'un vrai coup de polish, certains éléments n'étaient pas cliquables, et il y avait des features à ajouter.
       </p>
       <div class="flex flex-wrap gap-3 mb-10">
         <div class="neo-card-sm bg-white/10 px-4 py-2 font-mono text-sm">7 corrections</div>
@@ -244,7 +244,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number text-gray-400 mb-4">05 / CORRECTION</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Upload photo de profil.</h2>
       <p class="text-lg text-gray-400 font-space leading-relaxed mb-8">
-        L'upload de la photo de profil ne fonctionnait pas. Le fichier partait mais n'était pas stocké au bon endroit dans Supabase Storage. Résultat : la photo n'apparaissait pas.
+        L'upload de la photo de profil ne marchait pas correctement. Le fichier partait bien, mais il n'était pas stocké au bon endroit dans Supabase Storage. Du coup, la photo n'apparaissait nulle part.
       </p>
     </div>
     <div class="anim">
@@ -272,7 +272,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Upload logo dans les paramètres.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Le courtier pouvait uploader son logo pendant l'onboarding, mais s'il voulait le changer après dans les paramètres, ça ne marchait pas. Les policies de Supabase Storage n'autorisaient pas l'update depuis la page paramètres.</p>
+      <p class="text-gray-600 font-space mb-4">Le courtier pouvait uploader son logo pendant l'onboarding, mais impossible de le changer après dans les paramètres. Les policies de Supabase Storage bloquaient la mise à jour depuis cette page.</p>
       <div class="mt-4 p-4 bg-neo-gray border-l-4 border-neo-black text-sm font-space">
         <strong>Corrigé :</strong> policies de storage mises à jour + chemin de fichier unifié entre onboarding et paramètres.
       </div>
@@ -287,7 +287,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number mb-4">07 / CORRECTION</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Google Business simplifié.</h2>
       <p class="text-lg text-gray-500 font-space leading-relaxed mb-8">
-        Avant, le courtier devait aller sur Google Maps, copier l'URL, et la coller. Trop compliqué. Maintenant, on utilise directement le <strong>SIREN (ou BCE en Belgique)</strong> pour retrouver automatiquement sa fiche Google.
+        Avant, le courtier devait chercher son cabinet sur Google Maps, copier l'URL, et la coller dans l'app. Trop d'étapes, trop de risque d'erreur. Maintenant, il entre juste son <strong>SIREN (ou BCE en Belgique)</strong> et on retrouve sa fiche Google automatiquement.
       </p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6">
@@ -344,7 +344,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Boucles de redirection.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Le courtier se retrouvait coincé dans une boucle entre l'onboarding et le dashboard. Le middleware ne savait pas si l'onboarding était terminé ou pas.</p>
+      <p class="text-gray-600 font-space mb-4">Certains courtiers se retrouvaient coincés dans une boucle infinie entre l'onboarding et le dashboard. Le middleware n'avait aucun moyen de savoir si l'onboarding était terminé ou pas.</p>
       <div class="mt-4 p-4 bg-white border-l-4 border-green-500 text-sm font-space">
         <strong>Corrigé :</strong> ajout d'un flag <code class="bg-neo-gray px-1">onboarding_completed</code> en base. Plus de boucle.
       </div>
@@ -360,7 +360,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Routage email corrigé.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Le système d'envoi avait un bug : quand le token du courtier avait expiré, l'envoi échouait silencieusement. Maintenant si un provider échoue, ça bascule automatiquement sur le suivant.</p>
+      <p class="text-gray-600 font-space mb-4">Le système d'envoi avait un souci : quand le token du courtier avait expiré, l'email échouait sans prévenir personne. Maintenant, si un provider échoue, le système bascule automatiquement sur le suivant.</p>
       <div class="mt-4 space-y-3">
         <div class="flex items-center gap-4 p-3 bg-neo-gray">
           <div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">1</div>
@@ -384,7 +384,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Analyse IA plus robuste.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">L'analyse IA échouait parfois (timeout, quota) et l'avis restait sans analyse. Maintenant :</p>
+      <p class="text-gray-600 font-space mb-4">L'analyse IA plantait parfois &mdash; timeout, dépassement de quota &mdash; et l'avis restait bloqué sans analyse. C'est réglé :</p>
       <div class="space-y-2 text-sm font-space">
         <div class="flex items-start gap-2"><span class="check-done">&#9745;</span> Retry automatique (jusqu'à 3 tentatives)</div>
         <div class="flex items-start gap-2"><span class="check-done">&#9745;</span> Bouton "Relancer l'analyse" pour le courtier</div>
@@ -405,7 +405,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number text-gray-400 mb-4">12 / LA RÈGLE</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Tout doit être cliquable.</h2>
       <p class="text-lg text-gray-400 font-space leading-relaxed mb-6">
-        Il y avait plein d'éléments dans l'app qui avaient l'air cliquables mais qui ne faisaient rien. C'est corrigé. La règle c'est simple : <strong class="text-white">si ça ressemble à un bouton ou un lien, ça doit ouvrir une page ou une modal</strong>. Zéro élément décoratif qui prétend être interactif.
+        Pas mal d'éléments dans l'app avaient l'air cliquables mais ne faisaient rien. C'est corrigé partout. La règle est simple : <strong class="text-white">si ça ressemble à un bouton ou un lien, ça doit mener quelque part</strong>. Zéro élément décoratif qui fait semblant d'être interactif.
       </p>
     </div>
     <div class="anim">
@@ -499,6 +499,12 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number mb-4">15 / AVIS GOOGLE CLIQUABLES</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Les stats des avis Google.</h2>
     </div>
+    <div class="anim mb-6">
+      <div class="neo-card overflow-hidden max-w-2xl mx-auto">
+        <img src="screen-avis-google.png" alt="Page Avis Google" class="w-full h-auto" style="border-bottom:3px solid #0a0a0a">
+        <div class="p-3 text-xs font-space text-gray-500 text-center">Page Avis Google &mdash; stats et synchronisation</div>
+      </div>
+    </div>
     <div class="anim">
       <div class="space-y-3">
         <div class="flex items-center gap-4 p-4 neo-border-2 bg-white">
@@ -530,7 +536,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Les réponses IA cliquables.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Sous chaque avis Google, le lien <strong>"3 suggestions de réponse"</strong> ouvre maintenant un panneau avec les 3 variantes IA. Le courtier peut les lire et les copier en un clic.</p>
+      <p class="text-gray-600 font-space mb-4">Sous chaque avis Google, le lien <strong>"3 suggestions de réponse"</strong> ouvre un panneau avec les 3 variantes générées par l'IA. Le courtier lit, choisit, et copie en un clic.</p>
       <div class="grid sm:grid-cols-3 gap-3 mt-4">
         <div class="bg-white p-3 neo-border-2 text-center">
           <div class="font-bold text-xs mb-1">PROFESSIONNEL</div>
@@ -608,7 +614,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number mb-4">19 / REFONTE UI</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">L'interface repensée.</h2>
       <p class="text-lg text-gray-500 font-space leading-relaxed mb-8">
-        L'interface de la v1 fonctionnait, mais elle avait besoin d'un vrai coup de polish. J'ai revu le design de quasiment toutes les pages. L'idée c'est que ça fasse pro dès le premier regard.
+        L'interface de la v1 fonctionnait, mais elle avait besoin d'un vrai coup de polish. J'ai revu le design de quasiment toutes les pages pour que ça fasse pro dès le premier regard.
       </p>
     </div>
     <div class="anim">
@@ -673,6 +679,18 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
     <div class="anim">
       <div class="section-number mb-4">21 / CAMPAGNES & ANALYTIQUES</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Les autres pages refaites.</h2>
+    </div>
+    <div class="anim mb-6">
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <div class="neo-card overflow-hidden">
+          <img src="screen-campagnes-1.png" alt="Page Campagnes — vue liste" class="w-full h-auto" style="border-bottom:3px solid #0a0a0a">
+          <div class="p-3 text-xs font-space text-gray-500 text-center">Page Campagnes &mdash; vue d'ensemble</div>
+        </div>
+        <div class="neo-card overflow-hidden">
+          <img src="screen-campagnes-2.png" alt="Page Campagnes — avec campagnes" class="w-full h-auto" style="border-bottom:3px solid #0a0a0a">
+          <div class="p-3 text-xs font-space text-gray-500 text-center">Page Campagnes &mdash; avec campagnes actives</div>
+        </div>
+      </div>
     </div>
     <div class="anim">
       <div class="grid sm:grid-cols-2 gap-4">
@@ -821,7 +839,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number text-gray-400 mb-4">27 / NOUVELLE FEATURE</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Analyse du site web du courtier.</h2>
       <p class="text-lg text-gray-400 font-space leading-relaxed mb-6">
-        Nouvelle étape dans l'onboarding : le courtier entre l'URL de son site, et l'IA l'analyse pour donner des recommandations. C'est pas obligatoire &mdash; si le courtier n'a pas de site, il peut passer à la suite.
+        Nouvelle étape dans l'onboarding : le courtier entre l'URL de son site web et l'IA l'analyse pour lui donner des recommandations concrètes. C'est optionnel &mdash; si le courtier n'a pas de site, il passe directement à la suite.
       </p>
     </div>
     <div class="anim">
@@ -889,7 +907,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Extraction avis & concurrents à 100%.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">L'extraction des avis Google et la détection des concurrents ne marchaient pas toujours. C'est corrigé. Maintenant peu importe le parcours, à la fin de l'onboarding le courtier a ses avis et ses concurrents.</p>
+      <p class="text-gray-600 font-space mb-4">L'extraction des avis Google et la détection des concurrents ne marchaient pas à tous les coups. C'est réglé. Maintenant, quel que soit le parcours, à la fin de l'onboarding le courtier a ses avis et ses concurrents. Garanti.</p>
       <div class="space-y-3 mt-4">
         <div class="flex items-start gap-2"><span class="check-done">&#9745;</span> <strong>Retry automatique</strong> &mdash; si le scraping Apify échoue, il réessaie</div>
         <div class="flex items-start gap-2"><span class="check-done">&#9745;</span> <strong>Loader visible</strong> &mdash; le courtier voit la progression en temps réel</div>
@@ -911,7 +929,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Microsoft 365 &rarr; Gmail.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Le système d'envoi d'email fonctionne en cascade. Il essaie le meilleur provider d'abord, et bascule si ça échoue. Le courtier ne voit rien, c'est transparent.</p>
+      <p class="text-gray-600 font-space mb-4">Le système d'envoi fonctionne en cascade : il essaie le meilleur provider d'abord, et bascule automatiquement si ça échoue. Le courtier ne voit rien, c'est complètement transparent.</p>
       <div class="space-y-4 mt-4">
         <div class="flex items-center gap-4 p-4 bg-neo-gray neo-border-2">
           <div class="w-10 h-10 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm">1</div>
@@ -1081,7 +1099,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="anim neo-card p-6">
         <div class="neo-card-sm bg-neo-black text-white px-3 py-1 text-xs font-bold inline-block mb-3">PRIORITÉ 1</div>
         <h3 class="font-grotesk font-bold text-lg mb-2">Finir l'intégration email M365 dans les campagnes</h3>
-        <p class="text-sm text-gray-600 font-space">Les briques sont là (OAuth, chiffrement, Graph API). Il faut finir de brancher dans l'interface de campagne pour que les mails partent de la boîte Outlook du courtier.</p>
+        <p class="text-sm text-gray-600 font-space">Toutes les briques sont prêtes (OAuth, chiffrement, Graph API). Il reste à les brancher dans l'interface de campagne pour que les mails partent directement de la boîte Outlook du courtier.</p>
       </div>
       <div class="anim neo-card p-6">
         <div class="neo-card-sm bg-gray-500 text-white px-3 py-1 text-xs font-bold inline-block mb-3">PRIORITÉ 2</div>
@@ -1152,13 +1170,13 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number text-gray-400 mb-4">40 / VOILÀ</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">C'est l'état des lieux.</h2>
       <p class="text-lg opacity-80 font-space mb-4 leading-relaxed">
-        Depuis la v1, j'ai corrigé les bugs, rendu toute l'interface cliquable, ajouté l'analyse de site web, renforcé l'onboarding pour que l'extraction des avis et des concurrents marche à 100%, refait le design de toutes les pages, et mis en place la cascade email M365/Gmail.
+        Depuis la v1 : bugs corrigés, interface entièrement cliquable, analyse de site web ajoutée, onboarding renforcé pour que l'extraction des avis et des concurrents marche à 100%, refonte design de toutes les pages, et cascade email M365/Gmail en place.
       </p>
       <p class="text-lg opacity-80 font-space mb-4 leading-relaxed">
-        Le module Advice est fonctionnel. Il reste à finaliser l'intégration email dans les campagnes.
+        Le module Advice est fonctionnel. Il reste à finaliser l'intégration email dans les campagnes et on sera prêts pour les premiers courtiers.
       </p>
       <p class="text-lg opacity-80 font-space mb-8 leading-relaxed">
-        Si tu as des questions sur une partie en particulier, on en parle.
+        Si tu as des questions sur un point en particulier, n'hésite pas.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <a href="https://calendly.com/baptiste-visionia/30min" target="_blank" class="neo-btn bg-white text-neo-black px-6 py-3 font-space text-sm inline-flex items-center gap-2">&#128222; Planifier un call</a>
