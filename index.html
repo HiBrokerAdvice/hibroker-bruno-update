@@ -284,7 +284,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number mb-4">07 / CORRECTION</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Google Business simplifié.</h2>
       <p class="text-lg text-gray-500 font-space leading-relaxed mb-8">
-        Avant, le courtier devait aller sur Google Maps, copier l'URL, et la coller. Trop compliqué. Maintenant, il tape juste le <strong>nom du cabinet + la ville</strong>, et l'app cherche automatiquement.
+        Avant, le courtier devait aller sur Google Maps, copier l'URL, et la coller. Trop compliqué. Maintenant, on utilise directement le <strong>SIREN (ou BCE en Belgique)</strong> pour retrouver automatiquement sa fiche Google.
       </p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6">
@@ -301,10 +301,10 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="anim neo-card p-6">
         <div class="neo-card-sm bg-green-500/10 text-green-600 px-3 py-1 text-xs font-bold inline-block mb-3">APRÈS</div>
         <div class="space-y-2 text-sm font-space text-gray-500">
-          <div>1. Taper le nom + ville</div>
-          <div>2. Choisir dans la liste</div>
+          <div>1. Entrer son SIREN / BCE</div>
+          <div>2. La fiche Google est trouvée automatiquement</div>
         </div>
-        <div class="mt-3 text-xs text-green-600 font-mono">2 étapes, zéro erreur</div>
+        <div class="mt-3 text-xs text-green-600 font-mono">1 étape, zéro erreur</div>
       </div>
     </div>
   </div>
@@ -1082,11 +1082,6 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       </div>
       <div class="anim neo-card p-6">
         <div class="neo-card-sm bg-gray-500 text-white px-3 py-1 text-xs font-bold inline-block mb-3">PRIORITÉ 2</div>
-        <h3 class="font-grotesk font-bold text-lg mb-2">Intégration Stripe</h3>
-        <p class="text-sm text-gray-600 font-space">Pour la gestion des abonnements et paiements. Plans, facturation, essai gratuit.</p>
-      </div>
-      <div class="anim neo-card p-6">
-        <div class="neo-card-sm bg-gray-300 text-neo-black px-3 py-1 text-xs font-bold inline-block mb-3">PRIORITÉ 3</div>
         <h3 class="font-grotesk font-bold text-lg mb-2">Vérification OAuth Google</h3>
         <p class="text-sm text-gray-600 font-space">Processus administratif pour que la connexion Gmail fonctionne en production.</p>
       </div>
@@ -1138,10 +1133,6 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
         </div>
         <div class="flex items-start gap-4 p-3 border-l-4 border-neo-black bg-white">
           <div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">3</div>
-          <div><h4 class="font-bold text-sm">On intègre Stripe</h4><p class="text-xs text-gray-500 font-space">Abonnements, facturation, essai gratuit.</p></div>
-        </div>
-        <div class="flex items-start gap-4 p-3 border-l-4 border-neo-black bg-white">
-          <div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">4</div>
           <div><h4 class="font-bold text-sm">On lance avec les 5 premiers courtiers</h4><p class="text-xs text-gray-500 font-space">Test en conditions réelles. Feedback, ajustements, stabilisation.</p></div>
         </div>
       </div>
@@ -1161,7 +1152,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
         Depuis la v1, j'ai corrigé les bugs, rendu toute l'interface cliquable, ajouté l'analyse de site web, renforcé l'onboarding pour que l'extraction des avis et des concurrents marche à 100%, refait le design de toutes les pages, et mis en place la cascade email M365/Gmail.
       </p>
       <p class="text-lg opacity-80 font-space mb-4 leading-relaxed">
-        Le module Advice est fonctionnel. Il reste à finaliser l'intégration email dans les campagnes et à intégrer Stripe pour les abonnements.
+        Le module Advice est fonctionnel. Il reste à finaliser l'intégration email dans les campagnes.
       </p>
       <p class="text-lg opacity-80 font-space mb-8 leading-relaxed">
         Si tu as des questions sur une partie en particulier, on en parle.
