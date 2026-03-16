@@ -285,9 +285,9 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
   <div class="max-w-4xl mx-auto">
     <div class="anim">
       <div class="section-number mb-4">07 / CORRECTION</div>
-      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Google Business simplifié.</h2>
+      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Google Business + SIREN/BCE.</h2>
       <p class="text-lg text-gray-500 font-space leading-relaxed mb-8">
-        Avant, le courtier devait chercher son cabinet sur Google Maps, copier l'URL, et la coller dans l'app. Trop d'étapes, trop de risque d'erreur. Maintenant, il entre juste son <strong>SIREN (ou BCE en Belgique)</strong> et on retrouve sa fiche Google automatiquement.
+        Avant, le courtier devait chercher son cabinet sur Google Maps, copier l'URL, et la coller dans l'app. Maintenant, il entre juste son <strong>SIREN (ou BCE en Belgique)</strong> et on retrouve sa fiche Google automatiquement. Le champ s'adapte au pays sélectionné.
       </p>
     </div>
     <div class="grid sm:grid-cols-2 gap-6">
@@ -308,15 +308,33 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
           <div>2. La fiche Google est trouvée automatiquement</div>
         </div>
         <div class="mt-3 text-xs text-green-600 font-mono">1 étape, zéro erreur</div>
+        <div class="grid grid-cols-2 gap-2 mt-4">
+          <div class="bg-neo-gray p-2 border-l-3 border-neo-black">
+            <div class="font-bold text-xs">&#127467;&#127479; SIREN</div>
+            <div class="text-[10px] text-gray-400 font-space">9 chiffres, API INSEE</div>
+          </div>
+          <div class="bg-neo-gray p-2 border-l-3 border-neo-black">
+            <div class="font-bold text-xs">&#127463;&#127466; BCE</div>
+            <div class="text-[10px] text-gray-400 font-space">10 chiffres, API belge</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="grid sm:grid-cols-2 gap-6 mt-8">
+    <div class="grid sm:grid-cols-4 gap-4 mt-8">
       <div class="anim">
-        <div class="text-xs font-mono text-gray-400 mb-2">SIREN auto-rempli</div>
+        <div class="text-xs font-mono text-gray-400 mb-2">France</div>
+        <img src="screen01.png" alt="Onboarding France SIREN" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
+      </div>
+      <div class="anim">
+        <div class="text-xs font-mono text-gray-400 mb-2">Belgique</div>
+        <img src="screen02.png" alt="Onboarding Belgique BCE" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
+      </div>
+      <div class="anim">
+        <div class="text-xs font-mono text-gray-400 mb-2">Auto-rempli</div>
         <img src="screen03.png" alt="SIREN auto-fill" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
       </div>
       <div class="anim">
-        <div class="text-xs font-mono text-gray-400 mb-2">Établissements trouvés</div>
+        <div class="text-xs font-mono text-gray-400 mb-2">Trouvé</div>
         <img src="screen04.png" alt="Google Maps establishments" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
       </div>
     </div>
@@ -327,30 +345,23 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
 <section class="py-20 px-4" style="border-top:3px solid #0a0a0a">
   <div class="max-w-4xl mx-auto">
     <div class="anim">
-      <div class="section-number mb-4">08 / CORRECTION</div>
-      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">SIREN / BCE dynamique.</h2>
+      <div class="section-number mb-4">08 / AUTH & CONNEXIONS</div>
+      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">OAuth Google & Microsoft.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Le champ d'identifiant entreprise s'adapte maintenant au pays sélectionné.</p>
+      <p class="text-gray-600 font-space mb-4">Le courtier connecte son compte Google ou Microsoft en un clic. Les tokens sont chiffrés en AES-256-GCM et rafraîchis automatiquement par un cron.</p>
       <div class="grid sm:grid-cols-2 gap-4 mt-4">
-        <div class="bg-neo-gray p-4 border-l-4 border-neo-black">
-          <div class="font-bold text-sm mb-1">&#127467;&#127479; France</div>
-          <p class="text-xs text-gray-500 font-space">Champ "SIREN" &mdash; 9 chiffres. Lookup automatique via l'API INSEE.</p>
+        <div class="bg-neo-gray p-4 neo-border-2">
+          <div class="font-bold text-sm mb-1">Microsoft 365</div>
+          <p class="text-xs text-gray-500 font-space">Login OAuth &rarr; Graph API pour l'envoi email depuis la boîte Outlook du courtier.</p>
         </div>
-        <div class="bg-neo-gray p-4 border-l-4 border-neo-black">
-          <div class="font-bold text-sm mb-1">&#127463;&#127466; Belgique</div>
-          <p class="text-xs text-gray-500 font-space">Champ "BCE" &mdash; 10 chiffres. Label, placeholder et validation adaptés.</p>
+        <div class="bg-neo-gray p-4 neo-border-2">
+          <div class="font-bold text-sm mb-1">Google / Gmail</div>
+          <p class="text-xs text-gray-500 font-space">Login OAuth &rarr; Gmail API pour l'envoi email + Google Places pour la fiche.</p>
         </div>
       </div>
-      <div class="grid sm:grid-cols-2 gap-4 mt-6">
-        <div>
-          <div class="text-xs font-mono text-gray-400 mb-2">France — SIREN</div>
-          <img src="screen01.png" alt="Onboarding France SIREN" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
-        </div>
-        <div>
-          <div class="text-xs font-mono text-gray-400 mb-2">Belgique — BCE</div>
-          <img src="screen02.png" alt="Onboarding Belgique BCE" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
-        </div>
+      <div class="mt-4 p-3 bg-neo-gray border-l-4 border-neo-black text-xs font-space">
+        <strong>Sécurité :</strong> tokens chiffrés AES-256-GCM en base, refresh automatique toutes les nuits, rate limiting sur les endpoints OAuth.
       </div>
     </div>
   </div>
@@ -425,7 +436,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="section-number text-gray-400 mb-4">12 / LA RÈGLE</div>
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Tout doit être cliquable.</h2>
       <p class="text-lg text-gray-400 font-space leading-relaxed mb-6">
-        Pas mal d'éléments dans l'app avaient l'air cliquables mais ne faisaient rien. C'est corrigé partout. La règle est simple : <strong class="text-white">si ça ressemble à un bouton ou un lien, ça doit mener quelque part</strong>. Zéro élément décoratif qui fait semblant d'être interactif.
+        La règle : <strong class="text-white">si ça ressemble à un bouton ou un lien, ça doit mener quelque part</strong>. C'est appliqué partout.
       </p>
     </div>
     <div class="anim">
@@ -697,6 +708,10 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
           </div>
         </div>
       </div>
+      <div class="mt-6">
+        <img src="screen12.png" alt="Dashboard HiBroker" class="neo-border-2 neo-shadow-sm w-full" style="border-radius:0">
+        <div class="text-xs font-mono text-gray-400 mt-2">Dashboard — KPIs, évolution, sentiments</div>
+      </div>
     </div>
   </div>
 </section>
@@ -742,7 +757,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <div class="space-y-3">
         <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">1</div><span class="font-space text-sm"><strong>Info cabinet</strong> &mdash; nom, adresse, SIREN/BCE</span></div>
         <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">2</div><span class="font-space text-sm"><strong>Identité visuelle</strong> &mdash; logo + couleurs</span></div>
-        <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">3</div><span class="font-space text-sm"><strong>Réseaux + Email</strong> &mdash; OAuth réseaux sociaux + boîte email</span></div>
+        <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">3</div><span class="font-space text-sm"><strong>Google + Email</strong> &mdash; connexion Google Maps + boîte email (M365/Gmail)</span></div>
         <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">4</div><span class="font-space text-sm"><strong>Compagnies</strong> &mdash; sélection compagnies d'assurance</span></div>
         <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">5</div><span class="font-space text-sm"><strong>Paramètres IA</strong> &mdash; style + spécialité</span></div>
         <div class="flex items-center gap-4 p-3 bg-white"><div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm neo-border-2">6</div><span class="font-space text-sm"><strong>Confirmation</strong> &mdash; récapitulatif</span></div>
@@ -966,7 +981,7 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
   <div class="max-w-4xl mx-auto">
     <div class="anim">
       <div class="section-number mb-4">30 / ENVOI EMAIL</div>
-      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Microsoft 365 &rarr; Gmail.</h2>
+      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Envoi email : M365 & Gmail.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
       <p class="text-gray-600 font-space mb-4">Le système d'envoi fonctionne avec deux providers : il essaie le premier d'abord, et bascule automatiquement si ça échoue. Le courtier ne voit rien, c'est complètement transparent.</p>
@@ -1187,11 +1202,38 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
 <section class="py-24 px-4 bg-neo-dark text-white" style="border-top:3px solid #0a0a0a">
   <div class="max-w-3xl mx-auto text-center">
     <div class="anim">
-      <div class="section-number text-gray-400 mb-4">39 / RÉSUMÉ</div>
-      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Tout ce qui a changé.</h2>
-      <p class="text-lg opacity-80 font-space mb-4 leading-relaxed">
-        Depuis la v1 : bugs corrigés, interface entièrement cliquable, OpenAI remplacé par Claude, analyse de site web ajoutée, onboarding renforcé, refonte design de toutes les pages, emails via M365/Gmail &mdash; tout tourne sur des données réelles Supabase avec RLS.
-      </p>
+      <div class="section-number text-gray-400 mb-4">39 / V1 &rarr; V2</div>
+      <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Ce qui a changé.</h2>
+    </div>
+    <div class="anim">
+      <div class="grid sm:grid-cols-2 gap-0" style="border:3px solid #555;box-shadow:6px 6px 0 rgba(255,255,255,.1)">
+        <div class="p-6" style="background:rgba(239,68,68,.1);border-right:2px solid #555">
+          <div class="font-mono text-xs text-red-400 mb-4 font-bold">V1</div>
+          <div class="space-y-3 text-sm font-space text-gray-400">
+            <div>OpenAI pour l'IA</div>
+            <div>Mock data en dur</div>
+            <div>Brevo pour les emails</div>
+            <div>Éléments non cliquables</div>
+            <div>UI fonctionnelle mais brute</div>
+            <div>6 étapes onboarding</div>
+            <div>Google Maps par URL</div>
+            <div>8 tables, 21 routes</div>
+          </div>
+        </div>
+        <div class="p-6" style="background:rgba(34,197,94,.1)">
+          <div class="font-mono text-xs text-green-400 mb-4 font-bold">V2</div>
+          <div class="space-y-3 text-sm font-space text-white">
+            <div><strong>Claude</strong> (Haiku + Sonnet)</div>
+            <div><strong>Données réelles</strong> Supabase + RLS</div>
+            <div><strong>M365 & Gmail</strong> via OAuth</div>
+            <div><strong>Tout cliquable</strong> partout</div>
+            <div><strong>UI refaite</strong> de A à Z</div>
+            <div><strong>7 étapes</strong> + analyse site web</div>
+            <div><strong>SIREN/BCE</strong> automatique</div>
+            <div><strong>13 tables</strong>, <strong>40+ routes</strong></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
