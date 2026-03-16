@@ -982,27 +982,26 @@ body{font-family:'Inter',sans-serif;background:#fefefe;color:#0a0a0a;overflow-x:
       <h2 class="font-grotesk text-4xl sm:text-5xl font-bold mb-6">Envoi email : M365 & Gmail.</h2>
     </div>
     <div class="anim neo-card p-6 sm:p-8">
-      <p class="text-gray-600 font-space mb-4">Le système d'envoi fonctionne avec deux providers : il essaie le premier d'abord, et bascule automatiquement si ça échoue. Le courtier ne voit rien, c'est complètement transparent.</p>
-      <div class="space-y-4 mt-4">
-        <div class="flex items-center gap-4 p-4 bg-neo-gray neo-border-2">
-          <div class="w-10 h-10 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm">1</div>
-          <div>
+      <p class="text-gray-600 font-space mb-4">Les deux solutions sont prêtes et fonctionnelles. Le courtier choisit son provider, et l'email part directement de sa propre adresse.</p>
+      <div class="grid sm:grid-cols-2 gap-4 mt-4">
+        <div class="p-4 bg-neo-gray neo-border-2">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm">M</div>
             <h4 class="font-bold text-sm">Microsoft 365</h4>
-            <p class="text-xs text-gray-500 font-space">Via Graph API. L'email part de la boîte Outlook du courtier.</p>
+            <div class="ml-auto neo-card-sm bg-green-500/20 text-green-700 px-2 py-0.5 text-[10px] font-bold">PRÊT</div>
           </div>
-          <div class="ml-auto neo-card-sm bg-neo-black text-white px-2 py-0.5 text-xs font-bold">PRIORITAIRE</div>
+          <p class="text-xs text-gray-500 font-space">Via Graph API. L'email part de la boîte Outlook du courtier.</p>
         </div>
-        <div class="flex justify-center text-gray-300 text-xl">&darr; si échec</div>
-        <div class="flex items-center gap-4 p-4 bg-neo-gray neo-border-2">
-          <div class="w-10 h-10 bg-gray-600 text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm">2</div>
-          <div>
+        <div class="p-4 bg-neo-gray neo-border-2">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 bg-neo-black text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-sm">G</div>
             <h4 class="font-bold text-sm">Gmail</h4>
-            <p class="text-xs text-gray-500 font-space">Via Gmail API. L'email part de l'adresse Gmail du courtier.</p>
+            <div class="ml-auto neo-card-sm bg-green-500/20 text-green-700 px-2 py-0.5 text-[10px] font-bold">PRÊT</div>
           </div>
-          <div class="ml-auto neo-card-sm bg-gray-500 text-white px-2 py-0.5 text-xs font-bold">FALLBACK</div>
+          <p class="text-xs text-gray-500 font-space">Via Gmail API. L'email part de l'adresse Gmail du courtier.</p>
         </div>
       </div>
-      <p class="text-sm text-gray-500 font-space mt-4">Le client reçoit un email de "jean@cabinet-dupont.be", pas d'un noreply. Zéro spam.</p>
+      <p class="text-sm text-gray-500 font-space mt-4">Le client reçoit un email de "jean@cabinet-dupont.be", pas d'un noreply.</p>
     </div>
   </div>
 </section>
